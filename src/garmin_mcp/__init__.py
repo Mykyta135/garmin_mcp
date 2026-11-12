@@ -37,6 +37,7 @@ from garmin_mcp import workout_builders
 from garmin_mcp import courses
 from garmin_mcp import activity_analysis
 from garmin_mcp import calendar_events
+from garmin_mcp import local_db
 from garmin_mcp.tool_annotations import annotations_for
 from garmin_mcp.tool_profiles import resolve_tool_profile
 from garmin_mcp.write_errors import _upstream
@@ -855,6 +856,7 @@ def main():
     app = courses.register_tools(app)
     app = activity_analysis.register_tools(app)
     app = calendar_events.register_tools(app)
+    app = local_db.register_tools(app)  # local snapshot: sync_local, daily_brief, query_garmin_db
 
     # Register resources (workout templates)
     app = workout_templates.register_resources(app)

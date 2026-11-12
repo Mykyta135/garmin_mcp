@@ -1,3 +1,18 @@
+<img src=".github/cover.png" alt="Garmin dashboard: training and recovery analytics on top of the Garmin MCP server" width="100%">
+
+## What this fork adds
+
+A fork of [Taxuspt/garmin_mcp](https://github.com/Taxuspt/garmin_mcp). On top of the MCP server I added a local analytics layer for my own training:
+
+- **`scripts/sync.py` + `scripts/schema.sql`**: snapshot Garmin Connect into SQLite, so analysis never depends on Garmin's endpoints at page-load time.
+- **`src/garmin_mcp/local_db.py`**: MCP tools over that snapshot (`sync_local`, `daily_brief`, `query_garmin_db`), with tests.
+- **`scripts/morning_brief.py`**: a daily recovery brief from sleep, HRV, stress and training load.
+- **`web/`**: a Next.js + Recharts + shadcn/ui dashboard: day view, recovery, running, segments, body, achievements, and cross-sport experiments (SWOLF, performance condition, impact load, power modelled with mass carried forward per weigh-in).
+
+How to run it: [RUNNING.md](RUNNING.md). My data (`data/*.db`) is not in the repo. Below is the upstream README.
+
+---
+
 [![MseeP.ai Security Assessment Badge](https://mseep.net/pr/taxuspt-garmin-mcp-badge.png)](https://mseep.ai/app/taxuspt-garmin-mcp)
 
 # Garmin MCP Server

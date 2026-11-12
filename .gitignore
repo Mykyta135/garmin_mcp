@@ -23,3 +23,16 @@ playground/*
 scratch/*
 tests/fixtures/captured/*
 !tests/fixtures/captured/poc_walk_run.json
+SETUP.local.md
+
+# Local Garmin snapshot (personal health data — never commit)
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/brief-latest.txt
+data/briefs/
+
+# Web dashboard
+web/node_modules/
+web/.next/
+web/out/
